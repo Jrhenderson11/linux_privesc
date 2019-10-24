@@ -52,12 +52,13 @@ https://www.linux.com/tutorials/linux-101-introduction-sudo/
 
 ## Interesting files/folders
 
-/etc/passwd: all users and group info
-/etc/shadow: all hashed user passwords (needs root)
-~/.bash_history: command history
-/var/log: all logs
-/var/backups: backups
-~/.ssh: ssh keys / info
+
+**/etc/passwd**: all users and group info  
+**/etc/shadow**: all hashed user passwords (needs root)  
+**~/.bash_history**: command history  
+**/var/log**: all logs  
+**/var/backups**: backups  
+**~/.ssh**: ssh keys / info  
 
 Often CTF flags have flag in the filename, no harm in running a `locate flag`
 
@@ -65,28 +66,33 @@ Often CTF flags have flag in the filename, no harm in running a `locate flag`
 
 ### Who are you and where are you? 
 
-whoami, pwd, groups
+`whoami`, `pwd`, `groups`
 
 ### What does this device look like?
 
 What machine / operating system am I looking at?
 `uname -a`
+
 What other users exist?
 `who -a`
 `ls /home`
 
 ### What do I have access to? 
 
-Do I have a home folder?
+Do I have a home folder?  
 `ls ~`
-Do I own any files?
+
+Do I own any files?  
 ```find / -user `whoami` 2> /dev/null | grep -v proc```
-What does my network look like?
+
+What does my network look like?  
 `ip a; route;`
-Do I have a command history?
-`ls ~`
-Do I have any SSH keys?
-`ls ~/.ssh`
+
+Do I have a command history?  
+`ls ~/*_history`
+
+Do I have any SSH keys?  
+`ls ~/.ssh`  
 
 ### Where can I go from here?
 
